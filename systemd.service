@@ -1,0 +1,15 @@
+[Unit]
+Description=11. gen dell server fan control
+
+[Service]
+User=root
+WorkingDirectory=/root/temp
+PIDFile=/var/run/sudo/11thgen-shutup.pid
+ExecStart=/root/temp/11thgen-shutup
+Restart=on-failure
+StartLimitInterval=180
+StartLimitBurst=30
+RestartSec=5s
+
+[Install]
+WantedBy=multi-user.target
